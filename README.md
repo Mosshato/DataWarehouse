@@ -15,14 +15,6 @@ loaded as-is, progressively cleaned and conformed, and finally exposed as a busi
 | **Silver** | Tables      | Batch, full load, truncate & insert    | Cleansing, standardization, normalization, derived columns, enrichment       | None (as-is)                    |
 | **Gold**   | Views       | No load (query-time)                  | Data integration, aggregations, business logic                              | Star schema, flat/aggregated tables |
 
-## Data Flow
-
-![Data Flow Diagram](DataFlowDIagram.png)
-
-CRM and ERP source files flow through bronze and silver tables (one per source table),
-then converge in the gold layer into two conformed dimensions (`dim_customers`, `dim_products`)
-and one fact (`fact_sales`).
-
 ## Data Architecture
 
 - **Bronze Layer** — raw data loaded straight from the source CSV files (`datasets/source_crm`,
@@ -64,7 +56,6 @@ sql-data-warehouse-project/
 │   └── quality_checks_gold.sql    # Data quality checks for the gold layer (0 rows = healthy)
 │
 ├── SystemArhitecture.png          # Medallion architecture diagram
-├── DataFlowDIagram.png            # Table-level data flow diagram
 ├── LICENSE
 └── README.md
 ```

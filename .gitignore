@@ -24,6 +24,5 @@ Thumbs.db
 *.png
 *.pdf
 
-# ...but keep the architecture diagrams used in the README
+# ...but keep the architecture diagram used in the README
 !SystemArhitecture.png
-!DataFlowDIagram.png
